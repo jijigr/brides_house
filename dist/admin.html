@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Кабинет администратора — КовиКружево</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="booking.css"><link rel="stylesheet" href="admin.css?v=20260926-time">
+</head>
+<body class="admin-page">
+  <header><a class="back" href="index.html">← Каталог</a><span class="logo">КовиКружево</span><span></span></header>
+  <main class="admin-main">
+    <section id="login" class="login-wrap">
+      <p class="eyebrow">Для команды салона</p><h1>Кабинет<br><em>администратора</em></h1>
+      <section class="form-card login-card"><form id="login-form">
+        <label>Пароль администратора<span class="password-field"><input name="password" type="password" required autocomplete="current-password"><button type="button" id="toggle-password" aria-label="Показать пароль">Показать</button></span></label>
+        <button>Войти</button><p class="message" id="login-message" role="status"></p>
+      </form></section>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="admin-title"><div><p class="eyebrow">КовиКружево · управление записями</p><h1>Расписание<br><em>примерок</em></h1></div><div class="admin-actions"><button class="primary-link" id="open-manual">Записать на примерку</button><button class="secondary-button" id="edit-schedule">Редактировать расписание</button></div></div>
+      <section class="editor-card" id="schedule-editor" hidden>
+        <div><h2>Расписание на <span id="editor-date-label"></span></h2><p class="hint">Изменения относятся только к выбранной дате. Время уже записанных клиенток защищено от случайного удаления.</p></div>
+        <label class="closed-toggle"><input type="checkbox" id="closed-day"> Полностью закрыть этот день</label>
+        <div class="editor-times" id="editor-times"></div>
+        <div class="add-time-row"><label for="new-time">Добавить время</label><input type="time" id="new-time" value="10:00"><button type="button" class="secondary-button" id="add-time">Добавить окошко</button></div>
+        <div class="editor-actions"><button type="button" class="secondary-button" id="cancel-edit">Отмена</button><button type="button" class="primary-link button-link" id="save-schedule">Сохранить расписание</button></div>
+      </section>
+      <div class="schedule-board">
+        <aside class="date-column"><h2>Даты</h2><div id="date-list" class="date-list"></div></aside>
+        <section class="times-column"><div class="times-heading"><h2 id="selected-date">Сегодня</h2><span id="day-status" class="day-status"></span></div><div id="admin-notice" class="admin-notice" role="status"></div><div id="admin-times" class="admin-times"></div></section>
+      </div>
+      <section class="manual-card" id="manual-booking" hidden>
+        <div class="manual-heading"><div><p class="eyebrow">Для записи по телефону или лично</p><h2>Записать клиентку</h2><p class="hint">Платья выбирать необязательно — укажите имя, телефон и при необходимости комментарий.</p></div><button type="button" class="close-manual" id="close-manual" aria-label="Закрыть">×</button></div>
+        <form id="admin-booking-form" class="manual-form">
+          <label>Дата<input name="date" id="manual-date" type="date" required></label>
+          <label>Время<select name="time" id="manual-time" required></select></label>
+          <label>Имя<input name="name" required minlength="2"></label><label>Телефон<input name="phone" type="tel" required></label>
+          <label class="comment-field">Комментарий<textarea name="note" rows="2" placeholder="Например, особые пожелания"></textarea></label>
+          <button class="primary-link button-link">Подтвердить запись</button><p id="manual-message" class="message" role="status"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="admin.js?v=20260926-schedule"></script>
+</body></html>

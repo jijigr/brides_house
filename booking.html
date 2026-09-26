@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Запись на примерку — КовиКружево</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="booking.css"><style>.slot.taken{text-decoration:none}</style></head>
+<body>
+<header><a href="index.html" class="back">← Каталог</a><span class="logo">КовиКружево</span><span aria-hidden="true"></span></header>
+<main><p class="eyebrow">Запись на примерку</p><h1>Выберите день<br>и <em>время</em></h1><div class="booking-layout"><section class="calendar-card"><h2>Ближайшие даты</h2><div class="days" id="days"></div><p class="hint">Примерка длится 60 минут. Между визитами — 20 минут.</p></section><section class="time-card"><h2 id="selected-date">Выберите дату</h2><div class="slots" id="slots"><p>Сначала выберите день.</p></div></section></div><section class="form-card"><div><p class="eyebrow">Ваши данные</p><h2>Подтвердить запись</h2><p class="dress-line" id="dresses">Платья не выбраны</p></div><form id="booking-form"><label>Имя<input name="name" required minlength="2" placeholder="Как к вам обращаться"></label><label>Телефон<input name="phone" required type="tel" placeholder="+7 900 000-00-00"></label><label>Комментарий <small>необязательно</small><textarea name="note" placeholder="Например, хочу примерить с фатой"></textarea></label><button type="submit">Записаться на примерку</button><p class="message" id="message"></p></form></section></main>
+<script src="booking.js?v=20260926-form"></script>
+</body></html>
